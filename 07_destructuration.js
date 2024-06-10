@@ -12,7 +12,9 @@
  *  - interdiction d'utiliser slice ou splice
  */
 
-const extractFirstTwo = () => {}
+const tab = [1, 2, 3];
+const extractFirstTwo =  ([a, b]) => [a, b];
+console.log(extractFirstTwo(tab));
 
 /**
  * utilisez la décomposition pour extraire la premiere case du tableau et le reste du tableau
@@ -21,7 +23,9 @@ const extractFirstTwo = () => {}
  * exemple: [1, 2, 3] => [2, 3]
  */
 
-const extractRest = () => {}
+const tab2 = [1, 2, 3];
+const extractRest = ([a,...rest]) => rest;
+console.log(extractRest(tab2));
 
 /**
  * utilisez la décomposition pour extraire le champ "name" de l'objet passé en paramètre
@@ -35,7 +39,9 @@ const extractRest = () => {}
  * - interdiction d'utiliser l'opérateur "." pour accéder au champ "name"
  */
 
-const extractName = () => {}
+const obj = {name: 'toto', age: 42}
+const extractName = ({name}) => name;
+console.log(extractName(obj));
 
 /**
  * utilisez la décomposition pour retourner l'objet utilisateur sans le champ "password"
@@ -47,7 +53,8 @@ const extractName = () => {}
  *    - interdiction d'utiliser l'opérateur "." pour accéder au champ "password"
  * 
  */
-
-const removePassword = () => {};
+const obj2 = {name: 'toto', password: '1234'}
+const removePassword = ({password, ...rest}) => rest;
+console.log(removePassword(obj2));
 
 module.exports = {extractFirstTwo, extractRest, extractName, removePassword}
