@@ -11,6 +11,12 @@
  */
 
 function ternaryChain(a, b) {
+
+    return (a>b) ? ">": (a<b) ? "<" :  "=" ;
 }
 
 module.exports = ternaryChain;
+
+console.log(ternaryChain(2, 3));
+console.log(ternaryChain(3, 2));
+console.log(ternaryChain(3, 3));
