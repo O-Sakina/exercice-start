@@ -1,4 +1,4 @@
-//const {sleep} = require("../exercices/10_promise");
+const {sleep} = require("../exercice-start/10_promise.js");
 
 /**
  * Créez une fonction synchrone qui attend 2 seconde puis execute le callback passé en paramètre
@@ -12,7 +12,18 @@
  * 
  */
 const usingThen = (cb) => {
+    
+    sleep(2000).then(cb) ;
+    cb();
+
 }
+
+    usingThen(() => {
+        console.log("myCallback est affiché apres 2s")
+    });
+
+  
+
 
 /**
  * Créez une fonction asynchrone qui attend 2 seconde puis execute le callback passé en paramètre
@@ -25,9 +36,15 @@ const usingThen = (cb) => {
  *   - ne pas utiliser .then
  */
 
-const usingAwait = (cb) => {
+const usingAwait = async(cb) => {
 
-}
+    await sleep(2000);
+    cb();
+
+};
+usingAwait(() => {
+    console.log("mycallback");
+});
 
 /**
  * Créez une fonction asynchrone qui effectue un appel api vers l'url passé en paramètre
@@ -42,9 +59,10 @@ const usingAwait = (cb) => {
  */
 
 //décommentez la ligne suivante une fois le package installé
-//const axios = require("axios");
+const axios = require("axios");
 
 const apiResponse = async (url) => {
+    
 
 }
 
