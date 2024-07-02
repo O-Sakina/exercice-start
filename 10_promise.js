@@ -5,12 +5,11 @@
  * utilisez new Promise
  */
 
-const sleep = (ms) => new Promise(resolve => setTimeout(resolve,ms));
-
-const asynchroneFunction = async () => {
-    console.log("start");
-    await sleep(2000);
-    console.log("end");
-}
-asynchroneFunction();
-module.exports = {sleep};
+const sleep = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve();
+        }, 2000);
+    });
+};
+module.exports = { sleep };
